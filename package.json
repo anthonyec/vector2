@@ -5,10 +5,15 @@
   "author": "Anthony Cossins",
   "license": "ISC",
   "main": "dist/index.js",
+  "module": "dist/index.cjs",
   "types": "dist/@types/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "scripts": {
-    "build": "ts-pack"
+    "build": "ts-pack",
+    "doctor": "ts-pack -d"
   },
   "devDependencies": {
     "@lexedwards/ts-pack": "^1.0.0",

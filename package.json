@@ -8,10 +8,7 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/@types/index.d.ts",
-  "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
-  ],
+  "files": ["dist/"],
   "scripts": {
     "build": "ts-pack",
     "doctor": "ts-pack -d"

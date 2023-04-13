@@ -2,14 +2,25 @@
   "name": "@anthonyec/vector2",
   "version": "0.0.1",
   "description": "Utility class for dealing with 2D vectors in an immutable way",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc --build"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^4.9.5"
-  },
   "author": "Anthony Cossins",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/@types/index.d.ts",
+  "files": ["dist/"],
+  "scripts": {
+    "build": "ts-pack",
+    "doctor": "ts-pack -d"
+  },
+  "devDependencies": {
+    "@lexedwards/ts-pack": "^1.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/@types/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  }
 }

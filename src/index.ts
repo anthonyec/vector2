@@ -100,18 +100,18 @@ export class Vector2 {
     );
   }
 
-  /**
-   * Returns unsigned angle of vector.
-   */
   angle(): number {
     return Math.atan2(this.y, this.x);
   }
 
-  /**
-   * Returns signed angle of vector.
-   */
   angleTo(b: Vector2) {
-    return b.sub(this).angle();
+    return b.angle() - this.angle();
+  }
+
+  angleBetween(b: Vector2) {
+    const dot = this.dot(b);
+    const magnitudeProduct = this.magnitude() * b.magnitude();
+    return Math.acos(dot / magnitudeProduct);
   }
 
   dot(b: Vector2) {

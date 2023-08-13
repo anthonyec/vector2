@@ -16,7 +16,7 @@
     "doctor": "ts-pack -d"
   },
   "devDependencies": {
-    "@lexedwards/ts-pack": "^1.0.0"
+    "@lexedwards/ts-pack": "^1.3.3"
   },
   "exports": {
     ".": {

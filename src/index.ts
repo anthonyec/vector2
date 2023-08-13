@@ -13,7 +13,7 @@ export class Vector2 {
    * Convert the mouse coordinates in a mouse event into a vector.
    */
   static fromMouseEvent(event: MouseEvent) {
-    return new Vector2(event.offsetX, event.offsetY)
+    return new Vector2(event.offsetX, event.offsetY);
   }
 
   constructor(x: number = 0, y: number = 0) {
@@ -26,6 +26,14 @@ export class Vector2 {
    * */
   negate() {
     return new Vector2(-this.x, -this.y);
+  }
+
+  flipX() {
+    return new Vector2(-this.x, this.y);
+  }
+
+  flipY() {
+    return new Vector2(this.x, -this.y);
   }
 
   /**
@@ -95,9 +103,7 @@ export class Vector2 {
    * original.
    */
   perpendicular() {
-    return new Vector2(
-      this.y, -this.x
-    );
+    return new Vector2(this.y, -this.x);
   }
 
   angle(): number {
@@ -125,7 +131,7 @@ export class Vector2 {
     return new Vector2(
       this.x + (b.x - this.x) * weight,
       this.y + (b.y - this.y) * weight
-    )
+    );
   }
 
   /**
@@ -138,6 +144,21 @@ export class Vector2 {
     return new Vector2(
       this.x * cos - this.y * sin,
       this.x * sin + this.y * cos
-    )
+    );
+  }
+
+  abs() {
+    return new Vector2(Math.abs(this.x), Math.abs(this.y));
+  }
+
+  toFixed(fractionDigits?: number) {
+    const x = this.x.toFixed(fractionDigits);
+    const y = this.y.toFixed(fractionDigits);
+
+    return `(${x}, ${y})`;
+  }
+
+  toString() {
+    return `(${this.x}, ${this.y})`;
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@anthonyec/vector2",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Utility class for dealing with 2D vectors in an immutable way",
   "author": "Anthony Cossins",
   "license": "ISC",
